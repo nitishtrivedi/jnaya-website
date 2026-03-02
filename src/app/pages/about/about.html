@@ -1,0 +1,134 @@
+<!-- Hero -->
+<section class="page-hero">
+  <div class="page-hero-bg grid-bg"></div>
+  <div class="container page-hero-content">
+    <span class="section-label" data-aos="fade-down" style="color: var(--sky-cyan)">About Us</span>
+    <h1 data-aos="fade-up">
+      We Build Software<br />
+      <span class="gradient-text">That Matters</span>
+    </h1>
+    <p data-aos="fade-up" data-aos-delay="100">
+      Jnaya LLC is a technology company that designs and develops custom software solutions for
+      businesses worldwide.
+    </p>
+  </div>
+</section>
+
+<!-- Story -->
+<section class="section">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-content" data-aos="fade-right">
+        <span class="section-label">Our Story</span>
+        <h2 class="section-title">From Vision to Reality</h2>
+        <div class="section-line"></div>
+        <p>
+          Founded with a belief that software should be more than functional — it should be
+          exceptional. Jnaya LLC was born from the desire to bridge the gap between business vision
+          and technical execution.
+        </p>
+        <p>
+          Over the years, we've partnered with startups, mid-market companies, and enterprises to
+          deliver solutions that drive real business outcomes. Our team combines deep expertise in
+          .NET, Azure, and modern web technologies with a genuine passion for solving complex
+          problems.
+        </p>
+        <p>
+          Today, we continue to evolve, embracing new technologies and methodologies while staying
+          true to our core values of quality, transparency, and partnership.
+        </p>
+      </div>
+      <div class="story-visual" data-aos="fade-left">
+        <div class="mission-card">
+          <span class="mission-label">Our Mission</span>
+          <p class="mission-text">
+            "To empower organizations through meticulously engineered software that transforms
+            complexity into clarity, and ambition into achievement."
+          </p>
+        </div>
+        <div class="vision-card">
+          <span class="mission-label">Our Vision</span>
+          <p class="mission-text">
+            "To be the trusted technology partner that businesses turn to when excellence is not
+            optional."
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Values -->
+<section class="section values-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-label">Our Values</span>
+      <h2 class="section-title">What Drives Us</h2>
+      <div class="section-line" style="margin: 0 auto 20px"></div>
+    </div>
+    <div class="values-grid">
+      @for (value of values; track value.title; let i = $index) {
+        <div class="value-card card" [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="i * 80">
+          <div class="value-icon">{{ value.icon }}</div>
+          <h3>{{ value.title }}</h3>
+          <p>{{ value.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section class="section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-label">Our Journey</span>
+      <h2 class="section-title">Milestones</h2>
+      <div class="section-line" style="margin: 0 auto 20px"></div>
+    </div>
+    <div class="timeline">
+      @for (item of timeline; track item.year; let i = $index) {
+        <div class="timeline-item" [attr.data-aos]="i % 2 === 0 ? 'fade-right' : 'fade-left'">
+          <div class="timeline-marker">
+            <span class="timeline-year">{{ item.year }}</span>
+          </div>
+          <div class="timeline-content">
+            <h4>{{ item.title }}</h4>
+            <p>{{ item.desc }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="section team-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-label">Our Team</span>
+      <h2 class="section-title">Meet the Leadership</h2>
+      <div class="section-line" style="margin: 0 auto 20px"></div>
+    </div>
+    <div class="team-grid">
+      @for (member of team; track member.name; let i = $index) {
+        <div class="team-card" [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="i * 100">
+          <div class="team-avatar">
+            <span>{{ member.initials }}</span>
+          </div>
+          <h4>{{ member.name }}</h4>
+          <p>{{ member.role }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container cta-banner-content" data-aos="fade-up">
+    <h2>Want to Work With Us?</h2>
+    <p>Let's start a conversation about your next project.</p>
+    <a routerLink="/contact" class="btn btn-primary">Get in Touch</a>
+  </div>
+</section>

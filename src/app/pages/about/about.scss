@@ -1,0 +1,278 @@
+.page-hero {
+  min-height: 50vh;
+  background: var(--gradient-hero);
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-top: var(--nav-height);
+  overflow: hidden;
+}
+
+.page-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 80px 0;
+  text-align: center;
+
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -1.5px;
+    margin-bottom: 20px;
+    line-height: 1.15;
+  }
+
+  p {
+    font-size: 17px;
+    color: var(--neutral-400);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+}
+
+// Story
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+
+  @media (max-width: 868px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.story-content p {
+  font-size: 15px;
+  color: var(--neutral-600);
+  line-height: 1.9;
+  margin-bottom: 16px;
+}
+
+.mission-card,
+.vision-card {
+  background: var(--gradient-primary);
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 16px;
+}
+
+.mission-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--sky-cyan);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.mission-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--neutral-200);
+  line-height: 1.6;
+}
+
+// Values
+.values-section {
+  background: var(--neutral-50);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  @media (max-width: 868px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.value-card {
+  padding: 32px;
+  background: var(--white);
+
+  .value-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--gradient-cta);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    margin-bottom: 18px;
+  }
+
+  h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--deep-space);
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 13.5px;
+    color: var(--neutral-500);
+    line-height: 1.7;
+  }
+}
+
+// Timeline
+.timeline {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 40px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--neutral-200);
+  }
+}
+
+.timeline-item {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -40px;
+
+  .timeline-year {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--white);
+    background: var(--gradient-cta);
+    padding: 6px 12px;
+    border-radius: 8px;
+    white-space: nowrap;
+  }
+}
+
+.timeline-content {
+  background: var(--neutral-50);
+  border-radius: 12px;
+  padding: 20px 24px;
+  border: 1px solid var(--neutral-100);
+  flex: 1;
+  margin-left: 60px;
+
+  h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--deep-space);
+    margin-bottom: 6px;
+  }
+
+  p {
+    font-size: 13.5px;
+    color: var(--neutral-500);
+    line-height: 1.6;
+  }
+}
+
+// Team
+.team-section {
+  background: var(--white);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.team-card {
+  text-align: center;
+  padding: 30px 20px;
+
+  .team-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--gradient-cta);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+
+    span {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--white);
+    }
+  }
+
+  h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--deep-space);
+    margin-bottom: 4px;
+  }
+
+  p {
+    font-size: 13px;
+    color: var(--neutral-500);
+  }
+}
+
+// CTA
+.cta-banner {
+  background: var(--gradient-primary);
+  padding: 80px 0;
+}
+
+.cta-banner-content {
+  text-align: center;
+
+  h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  p {
+    font-size: 16px;
+    color: var(--neutral-400);
+    margin-bottom: 28px;
+  }
+}

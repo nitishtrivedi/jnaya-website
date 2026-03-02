@@ -1,0 +1,177 @@
+<!-- Hero -->
+<section class="page-hero">
+  <div class="page-hero-bg grid-bg"></div>
+  <div class="container page-hero-content">
+    <span class="section-label" data-aos="fade-down" style="color: var(--sky-cyan)">Careers</span>
+    <h1 data-aos="fade-up">
+      Build Your Future<br />
+      <span class="gradient-text">With Us</span>
+    </h1>
+    <p data-aos="fade-up" data-aos-delay="100">
+      Join a team of passionate engineers, designers, and strategists who are shaping the future of
+      software.
+    </p>
+  </div>
+</section>
+
+<!-- Culture -->
+<section class="section">
+  <div class="container">
+    <div class="culture-grid">
+      <div class="culture-content" data-aos="fade-right">
+        <span class="section-label">Our Culture</span>
+        <h2 class="section-title">Where Great Work<br />Meets Great People</h2>
+        <div class="section-line"></div>
+        <p>
+          At Jnaya, we believe that the best software is built by teams that feel empowered,
+          respected, and challenged. We foster an environment of continuous learning, open
+          collaboration, and genuine care for each other.
+        </p>
+        <p>
+          We're remote-first, async-friendly, and deeply committed to work-life balance. Your health
+          and happiness are not optional — they're the foundation of everything we build.
+        </p>
+      </div>
+      <div class="culture-visual" data-aos="fade-left">
+        <div class="culture-stats">
+          <div class="culture-stat">
+            <span class="cs-value">4.9<span class="cs-unit">/5</span></span>
+            <span class="cs-label">Employee Satisfaction</span>
+          </div>
+          <div class="culture-stat">
+            <span class="cs-value">92<span class="cs-unit">%</span></span>
+            <span class="cs-label">Retention Rate</span>
+          </div>
+          <div class="culture-stat">
+            <span class="cs-value">100<span class="cs-unit">%</span></span>
+            <span class="cs-label">Remote Friendly</span>
+          </div>
+          <div class="culture-stat">
+            <span class="cs-value">15<span class="cs-unit">+</span></span>
+            <span class="cs-label">Countries</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits -->
+<section class="section benefits-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-label">Perks & Benefits</span>
+      <h2 class="section-title">Why You'll Love Working Here</h2>
+      <div class="section-line" style="margin: 0 auto 20px"></div>
+    </div>
+    <div class="benefits-grid">
+      @for (benefit of benefits; track benefit.title; let i = $index) {
+        <div class="benefit-card" [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="i * 80">
+          <span class="benefit-icon">{{ benefit.icon }}</span>
+          <h3>{{ benefit.title }}</h3>
+          <p>{{ benefit.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Open Positions -->
+<section class="section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-label">Open Positions</span>
+      <h2 class="section-title">Current Openings</h2>
+      <div class="section-line" style="margin: 0 auto 20px"></div>
+      <p class="section-subtitle" style="margin: 0 auto">
+        Don't see a perfect match? We're always looking for talented people. Send us your resume
+        anyway.
+      </p>
+    </div>
+
+    <div class="openings-list">
+      @for (job of openings; track job.title; let i = $index) {
+        <div class="opening-card" [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="i * 60">
+          <div class="opening-main">
+            <div class="opening-info">
+              <h3>{{ job.title }}</h3>
+              <div class="opening-meta">
+                <span class="meta-item">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  >
+                    <rect x="2" y="7" width="20" height="14" rx="2" />
+                    <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
+                  </svg>
+                  {{ job.department }}
+                </span>
+                <span class="meta-item">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  >
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  {{ job.location }}
+                </span>
+                <span class="meta-item">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  {{ job.type }}
+                </span>
+              </div>
+            </div>
+            <a routerLink="/contact" class="btn btn-secondary opening-btn">Apply Now</a>
+          </div>
+          <div class="opening-tags">
+            @for (tag of job.tags; track tag) {
+              <span class="tag">{{ tag }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container" style="text-align: center" data-aos="fade-up">
+    <h2>Don't See Your Role?</h2>
+    <p
+      style="
+        color: var(--neutral-400);
+        font-size: 16px;
+        margin-bottom: 28px;
+        max-width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+      "
+    >
+      We're always looking for exceptional talent. Send us your resume and let's talk.
+    </p>
+    <a routerLink="/contact" class="btn btn-primary">Get in Touch</a>
+  </div>
+</section>

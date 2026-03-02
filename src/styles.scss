@@ -1,0 +1,294 @@
+/* You can add global styles to this file, and also import other style files */
+
+// ============================================
+// JNAYA LLC — Global Styles
+// ============================================
+
+:root {
+  // Primary
+  --deep-space: #0a1628;
+  --navy: #101d3f;
+  --royal-blue: #1e3a8a;
+  --electric-blue: #2563eb;
+  --cyan: #0891b2;
+  --teal: #0d9488;
+  --sky-cyan: #22d3ee;
+
+  // Neutrals
+  --neutral-900: #0f172a;
+  --neutral-800: #1e293b;
+  --neutral-700: #334155;
+  --neutral-600: #475569;
+  --neutral-500: #64748b;
+  --neutral-400: #94a3b8;
+  --neutral-300: #cbd5e1;
+  --neutral-200: #e2e8f0;
+  --neutral-100: #f1f5f9;
+  --neutral-50: #f8fafc;
+  --white: #ffffff;
+
+  // Semantic
+  --success: #059669;
+  --warning: #d97706;
+  --error: #dc2626;
+
+  // Gradients
+  --gradient-primary: linear-gradient(135deg, var(--deep-space), var(--royal-blue));
+  --gradient-cta: linear-gradient(135deg, var(--electric-blue), var(--cyan));
+  --gradient-accent: linear-gradient(135deg, var(--royal-blue), var(--teal));
+  --gradient-hero: linear-gradient(
+    160deg,
+    var(--deep-space) 0%,
+    var(--navy) 40%,
+    var(--royal-blue) 100%
+  );
+
+  // Spacing
+  --nav-height: 80px;
+}
+
+// Reset
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
+}
+
+body {
+  font-family:
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  color: var(--neutral-800);
+  background: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+// Typography Utilities
+.font-display {
+  font-family: 'Space Grotesk', sans-serif;
+}
+.font-body {
+  font-family: 'Inter', sans-serif;
+}
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+// Container
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  @media (min-width: 768px) {
+    padding: 0 40px;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 0 60px;
+  }
+}
+
+.container-narrow {
+  max-width: 900px;
+}
+
+// Section Spacing
+.section {
+  padding: 100px 0;
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
+  }
+}
+
+// Section Headers
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--electric-blue);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 700;
+  color: var(--deep-space);
+  line-height: 1.2;
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+}
+
+.section-line {
+  width: 50px;
+  height: 3px;
+  background: var(--gradient-cta);
+  border-radius: 2px;
+  margin-bottom: 24px;
+}
+
+.section-subtitle {
+  font-size: 17px;
+  color: var(--neutral-500);
+  max-width: 560px;
+  line-height: 1.8;
+}
+
+// Buttons
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+
+  &-primary {
+    background: var(--gradient-cta);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+    }
+  }
+
+  &-secondary {
+    background: transparent;
+    color: var(--electric-blue);
+    border: 2px solid var(--electric-blue);
+
+    &:hover {
+      background: var(--electric-blue);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+  }
+
+  &-outline-light {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.6);
+      transform: translateY(-2px);
+    }
+  }
+
+  &-dark {
+    background: var(--deep-space);
+    color: var(--white);
+
+    &:hover {
+      background: var(--neutral-900);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// Card base
+.card {
+  background: var(--white);
+  border-radius: 16px;
+  border: 1px solid var(--neutral-100);
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: var(--neutral-200);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    transform: translateY(-4px);
+  }
+}
+
+// Gradient text
+.gradient-text {
+  background: var(--gradient-cta);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// Grid Backgrounds
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.grid-bg-light {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--neutral-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neutral-300);
+  border-radius: 4px;
+
+  &:hover {
+    background: var(--neutral-400);
+  }
+}
+
+// Selection
+::selection {
+  background: rgba(37, 99, 235, 0.15);
+  color: var(--deep-space);
+}
+
+// AOS overrides
+[data-aos] {
+  pointer-events: auto !important;
+}
+
+// Responsive utilities
+.hide-mobile {
+  @media (max-width: 768px) {
+    display: none !important;
+  }
+}
+
+.hide-desktop {
+  @media (min-width: 769px) {
+    display: none !important;
+  }
+}

@@ -1,0 +1,212 @@
+<!-- Hero -->
+<section class="page-hero">
+  <div class="page-hero-bg grid-bg"></div>
+  <div class="container page-hero-content">
+    <span class="section-label" data-aos="fade-down" style="color: var(--sky-cyan)"
+      >Contact Us</span
+    >
+    <h1 data-aos="fade-up">
+      Let's Start<br />
+      <span class="gradient-text">Building Together</span>
+    </h1>
+    <p data-aos="fade-up" data-aos-delay="100">
+      Have a project in mind? We'd love to hear about it. Fill out the form below and we'll get back
+      to you within 24 hours.
+    </p>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- Form -->
+      <div class="contact-form-wrapper" data-aos="fade-right">
+        @if (isSubmitted) {
+          <div class="success-state">
+            <div class="success-icon">✓</div>
+            <h3>Message Sent!</h3>
+            <p>Thank you for reaching out. We'll get back to you within 24 hours.</p>
+          </div>
+        } @else {
+          <form (ngSubmit)="onSubmit()" class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input
+                  type="text"
+                  id="name"
+                  [(ngModel)]="formData.name"
+                  name="name"
+                  placeholder="John Doe"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input
+                  type="email"
+                  id="email"
+                  [(ngModel)]="formData.email"
+                  name="email"
+                  placeholder="john@company.com"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="company">Company</label>
+                <input
+                  type="text"
+                  id="company"
+                  [(ngModel)]="formData.company"
+                  name="company"
+                  placeholder="Your company name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="service">Service Interested In</label>
+                <select id="service" [(ngModel)]="formData.service" name="service">
+                  <option value="" disabled>Select a service</option>
+                  @for (service of services; track service) {
+                    <option [value]="service">{{ service }}</option>
+                  }
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="budget">Estimated Budget</label>
+              <select id="budget" [(ngModel)]="formData.budget" name="budget">
+                <option value="" disabled>Select a range</option>
+                @for (budget of budgets; track budget) {
+                  <option [value]="budget">{{ budget }}</option>
+                }
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Project Details *</label>
+              <textarea
+                id="message"
+                [(ngModel)]="formData.message"
+                name="message"
+                rows="5"
+                placeholder="Tell us about your project, goals, and timeline..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary submit-btn">
+              Send Message
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+          </form>
+        }
+      </div>
+
+      <!-- Info Sidebar -->
+      <div class="contact-sidebar" data-aos="fade-left">
+        <div class="sidebar-card">
+          <h3>Contact Information</h3>
+          <p>
+            Reach out through any of these channels. We typically respond within a few hours during
+            business days.
+          </p>
+
+          <div class="contact-items">
+            @for (item of contactInfo; track item.label) {
+              <div class="contact-item">
+                <div class="contact-icon">
+                  @switch (item.icon) {
+                    @case ('email') {
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                      >
+                        <path
+                          d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                        />
+                        <polyline points="22,6 12,13 2,6" />
+                      </svg>
+                    }
+                    @case ('phone') {
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                      >
+                        <path
+                          d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
+                        />
+                      </svg>
+                    }
+                    @case ('location') {
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                      >
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                        <circle cx="12" cy="10" r="3" />
+                      </svg>
+                    }
+                    @case ('hours') {
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                      >
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                      </svg>
+                    }
+                  }
+                </div>
+                <div>
+                  <span class="ci-label">{{ item.label }}</span>
+                  <span class="ci-value">{{ item.value }}</span>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+
+        <div class="sidebar-card response-card">
+          <div class="response-icon">⚡</div>
+          <h4>Quick Response</h4>
+          <p>We respond to all inquiries within <strong>24 hours</strong> during business days.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

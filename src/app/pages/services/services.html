@@ -1,0 +1,148 @@
+<!-- Hero -->
+<section class="page-hero">
+  <div class="page-hero-bg grid-bg"></div>
+  <div class="container page-hero-content">
+    <span class="section-label" data-aos="fade-down" style="color: var(--sky-cyan)"
+      >Our Services</span
+    >
+    <h1 data-aos="fade-up">
+      Solutions <span class="gradient-text">Engineered</span><br />
+      For Your Success
+    </h1>
+    <p data-aos="fade-up" data-aos-delay="100">
+      We offer end-to-end software development services across the Microsoft ecosystem and modern
+      web platforms.
+    </p>
+  </div>
+</section>
+
+<!-- Services Detail -->
+<section class="section">
+  <div class="container">
+    @for (service of services; track service.id; let i = $index; let isEven = $even) {
+      <div
+        class="service-detail"
+        [class.reverse]="!isEven"
+        [attr.id]="service.id"
+        data-aos="fade-up"
+      >
+        <div class="service-info">
+          <div class="service-badge" [style.background]="service.color">
+            @switch (service.icon) {
+              @case ('code') {
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+              }
+              @case ('cloud') {
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                  <path d="M2 17l10 5 10-5" />
+                  <path d="M2 12l10 5 10-5" />
+                </svg>
+              }
+              @case ('layout') {
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" />
+                  <line x1="8" y1="21" x2="16" y2="21" />
+                  <line x1="12" y1="17" x2="12" y2="21" />
+                </svg>
+              }
+              @case ('store') {
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <path d="M16 10a4 4 0 01-8 0" />
+                </svg>
+              }
+            }
+          </div>
+          <span class="service-subtitle">{{ service.subtitle }}</span>
+          <h2>{{ service.title }}</h2>
+          <p class="service-desc">{{ service.description }}</p>
+
+          <div class="features-list">
+            @for (feature of service.features; track feature) {
+              <div class="feature-item">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="var(--electric-blue)"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>{{ feature }}</span>
+              </div>
+            }
+          </div>
+        </div>
+
+        <div class="service-tech-panel">
+          <h4>Technology Stack</h4>
+          <div class="tech-grid">
+            @for (tech of service.technologies; track tech) {
+              <span class="tech-pill">{{ tech }}</span>
+            }
+          </div>
+          <div class="tech-cta">
+            <a
+              routerLink="/contact"
+              class="btn btn-primary"
+              style="width: 100%; justify-content: center"
+            >
+              Discuss This Service
+            </a>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container" style="text-align: center" data-aos="fade-up">
+    <h2>Not Sure Which Service You Need?</h2>
+    <p style="color: var(--neutral-400); font-size: 16px; margin-bottom: 28px">
+      Let's have a conversation. We'll help you figure out the best approach.
+    </p>
+    <a routerLink="/contact" class="btn btn-primary">Schedule a Consultation</a>
+  </div>
+</section>

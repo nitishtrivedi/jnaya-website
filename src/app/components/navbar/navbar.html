@@ -1,0 +1,78 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="navbar-inner container">
+    <!-- Logo -->
+    <a routerLink="/" class="logo" (click)="closeMobileMenu()">
+      <div class="logo-mark">
+        <svg width="36" height="36" viewBox="0 0 120 120" fill="none">
+          <rect x="10" y="10" width="100" height="100" rx="24" fill="#0A1628" />
+          <path
+            d="M60 32 L60 72 Q60 86 46 86"
+            stroke="url(#navGrad)"
+            stroke-width="7"
+            stroke-linecap="round"
+            fill="none"
+          />
+          <circle cx="72" cy="44" r="5" fill="#22D3EE" />
+          <defs>
+            <linearGradient id="navGrad" x1="46" y1="32" x2="60" y2="86">
+              <stop offset="0%" stop-color="#60A5FA" />
+              <stop offset="100%" stop-color="#06B6D4" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text"> <span class="logo-j">J</span>naya </span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <div class="nav-links hide-mobile">
+      @for (link of navLinks; track link.path) {
+        <a
+          [routerLink]="link.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: link.exact }"
+          class="nav-link"
+        >
+          {{ link.label }}
+        </a>
+      }
+    </div>
+
+    <!-- CTA -->
+    <a routerLink="/contact" class="btn btn-primary nav-cta hide-mobile"> Start a Project </a>
+
+    <!-- Mobile Toggle -->
+    <button
+      class="mobile-toggle hide-desktop"
+      (click)="toggleMobileMenu()"
+      [class.open]="isMobileMenuOpen"
+      aria-label="Toggle menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  @if (isMobileMenuOpen) {
+    <div class="mobile-menu" (click)="closeMobileMenu()">
+      <div class="mobile-menu-inner" (click)="$event.stopPropagation()">
+        @for (link of navLinks; track link.path) {
+          <a
+            [routerLink]="link.path"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: link.exact }"
+            class="mobile-link"
+            (click)="closeMobileMenu()"
+          >
+            {{ link.label }}
+          </a>
+        }
+        <a routerLink="/contact" class="btn btn-primary mobile-cta" (click)="closeMobileMenu()">
+          Start a Project
+        </a>
+      </div>
+    </div>
+  }
+</nav>
