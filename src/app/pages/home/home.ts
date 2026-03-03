@@ -14,10 +14,10 @@ export class Home implements OnInit, OnDestroy {
   private observer: IntersectionObserver | null = null;
 
   stats = [
-    { value: 0, target: 50, suffix: '+', label: 'Projects Delivered' },
+    { value: 0, target: 10, suffix: '+', label: 'Projects Delivered' },
     { value: 0, target: 99, suffix: '%', label: 'Client Satisfaction' },
-    { value: 0, target: 12, suffix: '+', label: 'Years Experience' },
-    { value: 0, target: 30, suffix: '+', label: 'Team Members' },
+    { value: 0, target: 7, suffix: '+', label: 'Years Experience' },
+    { value: 0, target: 2, suffix: '+', label: 'Team Members' },
   ];
 
   services = [

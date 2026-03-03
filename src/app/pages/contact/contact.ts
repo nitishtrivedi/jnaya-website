@@ -40,10 +40,10 @@ export class Contact {
   isSubmitted = false;
 
   contactInfo = [
-    { icon: 'email', label: 'Email', value: 'hello@jnaya.com' },
-    { icon: 'phone', label: 'Phone', value: '+1 (555) 123-4567' },
-    { icon: 'location', label: 'Location', value: 'San Francisco, CA' },
-    { icon: 'hours', label: 'Hours', value: 'Mon — Fri, 9AM — 6PM PST' },
+    { icon: 'email', label: 'Email', value: 'jnayallc@gmail.com' },
+    { icon: 'phone', label: 'Phone', value: '+91 (735) 080-4321' },
+    { icon: 'location', label: 'Location', value: 'Pune, MH, India' },
+    { icon: 'hours', label: 'Hours', value: '24 Hours Service' },
   ];
 
   onSubmit() {

@@ -50,35 +50,35 @@ export class About {
   ];
 
   team = [
-    { name: 'Alex Johnson', role: 'CEO & Founder', initials: 'AJ' },
-    { name: 'Sarah Chen', role: 'CTO', initials: 'SC' },
+    { name: 'Nitish Trivedi', role: 'Founder and MD', initials: 'NT' },
+    { name: 'J Vora', role: 'Co-Founder and CEO', initials: 'JV' },
     { name: 'Michael Park', role: 'Lead Architect', initials: 'MP' },
     { name: 'Emily Davis', role: 'Design Director', initials: 'ED' },
   ];
 
   timeline = [
     {
-      year: '2013',
+      year: '2026',
       title: 'Founded',
-      desc: 'Jnaya LLC was established with a vision to deliver premium software solutions.',
+      desc: 'Jnaya was established with a vision to deliver premium software solutions.',
     },
+    // {
+    //   year: '2026',
+    //   title: 'Azure Partnership',
+    //   desc: 'Became a certified Microsoft Azure Solutions Partner.',
+    // },
     {
-      year: '2016',
-      title: 'Azure Partnership',
-      desc: 'Became a certified Microsoft Azure Solutions Partner.',
+      year: '2026',
+      title: '10th Project',
+      desc: 'Delivered our 10th successful project milestone.',
     },
+    // {
+    //   year: '2022',
+    //   title: 'Global Expansion',
+    //   desc: 'Expanded operations to serve clients across 3 continents.',
+    // },
     {
-      year: '2019',
-      title: '100th Project',
-      desc: 'Delivered our 100th successful project milestone.',
-    },
-    {
-      year: '2022',
-      title: 'Global Expansion',
-      desc: 'Expanded operations to serve clients across 3 continents.',
-    },
-    {
-      year: '2025',
+      year: '2026',
       title: 'AI Integration',
       desc: 'Launched AI-powered development services and consulting.',
     },
